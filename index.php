@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 	exit(0);
 }
 
+$clientIp = $_SERVER["HTTP_CF_CONNECTING_IP"] ?? $_SERVER["REMOTE_ADDR"];
+
 header("Content-Type: text/plain");
 
-echo $_SERVER["REMOTE_ADDR"];
+echo $clientIp;
